@@ -27,6 +27,7 @@ func main() {
 		"dgryski/go-sip13",
 		"dgryski/tsip",
 		"dgryski/go-farm",
+		"zeebo/xxh3",
 	}
 
 	// Generate test data

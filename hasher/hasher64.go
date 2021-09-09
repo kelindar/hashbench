@@ -10,10 +10,11 @@ import (
 	"github.com/dgryski/go-farm"
 	"github.com/dgryski/go-metro"
 	"github.com/dgryski/go-sip13"
-	"github.com/dgryski/tsip/go"
+	tsip "github.com/dgryski/tsip/go"
 	"github.com/minio/highwayhash"
 	md5simd "github.com/minio/md5-simd"
 	"github.com/twmb/murmur3"
+	"github.com/zeebo/xxh3"
 )
 
 var md5 = md5simd.NewServer()
@@ -55,6 +56,8 @@ func For64(name string) (hasher64, bool) {
 		}, true
 	case "dgryski/go-farm":
 		return farm.Hash64, true
+	case "zeebo/xxh3":
+		return xxh3.Hash, true
 	}
 
 	return nil, false
